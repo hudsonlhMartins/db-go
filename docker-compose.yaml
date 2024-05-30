@@ -1,0 +1,18 @@
+version: "3"
+
+# gerar um docker com mysql"5.7"
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: docker
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
